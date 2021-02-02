@@ -2,10 +2,15 @@ package com.fr.uha.ensisa.java.restapi.model;
 
 import java.util.List;
 
+import javax.persistence.Entity;
+import javax.persistence.*;
+
+
+@Entity
 public class Suggestion {
 
 	
-	
+	@Id
 	private int id;
 	
 	private String userID;
