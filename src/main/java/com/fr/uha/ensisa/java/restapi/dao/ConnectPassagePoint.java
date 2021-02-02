@@ -1,5 +1,6 @@
 package com.fr.uha.ensisa.java.restapi.dao;
 
+<<<<<<< HEAD
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -52,3 +53,16 @@ private static  EntityManagerFactory ENTITY_MANAGER_FACTORY = Persistence.create
 	    et.commit();	
 	}
 }
+=======
+import com.fr.uha.ensisa.java.restapi.model.PassagePoint;
+
+public class ConnectPassagePoint extends DAOAbstractFacade<PassagePoint> {
+
+	public ConnectPassagePoint() {
+		super(PassagePoint.class);
+	}
+	
+
+	
+}
+>>>>>>> c97d8f2ffb4c683e9d53139442be16642e205774

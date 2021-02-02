@@ -13,6 +13,7 @@ import com.fr.uha.ensisa.java.restapi.model.User;
 
 
 
+<<<<<<< HEAD
 public class ConnectUser{
 	
 	private static  EntityManagerFactory ENTITY_MANAGER_FACTORY = Persistence.createEntityManagerFactory("gvfc-api");
@@ -56,7 +57,43 @@ public class ConnectUser{
 		.setParameter(4,user.getLastName())
 		.executeUpdate();
 	    et.commit();
+=======
+public class ConnectUser extends DAOAbstractFacade<User>{
+	
+	public ConnectUser() {
+		super(User.class);
+>>>>>>> c97d8f2ffb4c683e9d53139442be16642e205774
 	}
+
+//	@Transactional
+//	public static void addUser(User user) {
+//		EntityManager em = ENTITY_MANAGER_FACTORY.createEntityManager();
+//		String query = "INSERT INTO user (email,password,firstname,lastname) VALUES (?,?,?,?) ";
+//		EntityTransaction et = null;
+//		
+//		
+//			et = em.getTransaction();
+//			et.begin();
+//			em.createNativeQuery(query,User.class).
+//			setParameter(1,user.getEmail())
+//			.setParameter(2,user.getPassword())
+//			.setParameter(3,user.getFirstName())
+//			.setParameter(4,user.getLastName())
+//			.executeUpdate();
+//		    et.commit();
+//		
+//	
+//	}
+//	
+//	@Transactional
+//	public static void deleteUser(User user) {
+//		
+//	}
+//	
+//	@Transactional
+//	public static void putUser(User user) {
+//		
+//	}
 	
 //	public static Vol getVol(String numVol) {
 //		EntityManager em = ENTITY_MANAGER_FACTORY.createEntityManager();

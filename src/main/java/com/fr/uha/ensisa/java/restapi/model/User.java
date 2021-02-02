@@ -18,6 +18,7 @@ private static final long serialVersionUID = -1798070786993154676L;
 	
 	@Id
 	@Column(name = "user_id" , unique =  true)
+	//@GeneratedValue(strategy = GenerationType.AUTO)
 	private int user_id;
 	
 	@Column(name = "email", unique = true, nullable = false)
