@@ -14,10 +14,10 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 
-@Entity
-@Table(name = "segment")
+//@Entity
+//@Table(name = "segment")
 public class Segment  implements Serializable{
-	
+/*	
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -104,7 +104,7 @@ public class Segment  implements Serializable{
 	}
 
 	
-	
+*/
 }
 
 

@@ -13,15 +13,15 @@ import javax.persistence.Table;
 
 
 
-@Entity
-@Table(name = "passagepoint")
+//@Entity
+//@Table(name = "passagepoint")
 public class PassagePoint implements Serializable{
 
 
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 7714770575023878228L;
+/*	private static final long serialVersionUID = 7714770575023878228L;
 
 
 
@@ -79,5 +79,5 @@ public class PassagePoint implements Serializable{
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	
+*/	
 }
