@@ -8,6 +8,10 @@ xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/x
 		<jta-data-source>jdbc/restapi</jta-data-source>
 		
 		<class>com.fr.uha.ensisa.java.restapi.model.User</class>
+		<class>com.fr.uha.ensisa.java.restapi.model.Obstacle</class>
+		<class>com.fr.uha.ensisa.java.restapi.model.PassagePoint</class>
+		<class>com.fr.uha.ensisa.java.restapi.model.Realisation</class>
+		<class>com.fr.uha.ensisa.java.restapi.model.Segment</class>
 		<exclude-unlisted-classes>false</exclude-unlisted-classes>
 		<properties>
 			<property name="eclipselink.ddl-generation" value="create-tables" />

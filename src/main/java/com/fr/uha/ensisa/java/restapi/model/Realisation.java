@@ -38,7 +38,6 @@ public class Realisation implements Serializable {
 	
 	public Realisation(int realisationID, int userID, int challengeID, Map<Integer, Date> segmentDateRealisation,
 			Date endTime, Map<Integer, Boolean> realisationObstacle, long km, MovementMode movementMode) {
-		super();
 		this.realisationID = realisationID;
 		this.userID = userID;
 		this.challengeID = challengeID;
@@ -159,9 +158,6 @@ public class Realisation implements Serializable {
 		}
 		return finalResult;
 	}
-	//methode pour difinir next segment
-	
-	//ajout et verif de la r�alisa des obstacles,
-	 
+
 
 }
