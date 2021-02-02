@@ -2,34 +2,23 @@ package com.fr.uha.ensisa.java.restapi.dao;
 
 import java.util.List;
 
-import javax.naming.InitialContext;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
-import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
-import javax.servlet.ServletContextEvent;
-import javax.servlet.ServletContextListener;
-import javax.transaction.SystemException;
-import javax.transaction.Transactional;
-import javax.transaction.UserTransaction;
 
 import com.fr.uha.ensisa.java.restapi.model.User;
 
 
 
-public class ConnectUser implements ServletContextListener {
+public class ConnectUser{
 	
 	private static  EntityManagerFactory ENTITY_MANAGER_FACTORY = Persistence.createEntityManagerFactory("gvfc-api");
-	
-	@PersistenceContext(unitName = "gvfc-api")
-	private static EntityManager em;
 	
 	public static List<User> getAllUsers() {
 		EntityManager em = ENTITY_MANAGER_FACTORY.createEntityManager();
 		String query = "SELECT u FROM User u";
-		
 		
 		TypedQuery<User> tq = em.createQuery(query,User.class);
 		List<User> users = null;
@@ -52,59 +41,31 @@ public class ConnectUser implements ServletContextListener {
 	
 	
 	public static User addUser(User user) {
-		EntityManager em = getEntityManager();
-		UserTransaction et = null;
+		EntityManager em = ENTITY_MANAGER_FACTORY.createEntityManager();
+		EntityTransaction et = null;
+		User nuser = new User();
 		try {
-			et = (UserTransaction) new InitialContext().lookup("java:comp/UserTransaction");
+			et = em.getTransaction();
 			et.begin();
-			em.persist(user);
+			
+			nuser.setEmail(user.getEmail());
+			nuser.setFirstName(user.getFirstName());
+			nuser.setLastName(user.getLastName());
+			nuser.setPassword(user.getPassword());
+			em.persist(nuser);
 			et.commit();
 		} catch (Exception e) {
 			if (et != null)
 			{
-				try {
-					et.rollback();
-				} catch (IllegalStateException e1) {
-					
-					e1.printStackTrace();
-				} catch (SecurityException e1) {
-					
-					e1.printStackTrace();
-				} catch (SystemException e1) {
-					e1.printStackTrace();
-				}
+				et.rollback();
 			}
 			e.printStackTrace();
 		}
 		finally {
 			em.close();
 		}
-		return user;
+		return nuser;
 		
-	}
-
-
-
-
-	@Override
-	public void contextInitialized(ServletContextEvent sce) {
-		// TODO Auto-generated method stub
-	
-	}
-
-
-
-
-	@Override
-	public void contextDestroyed(ServletContextEvent sce) {
-		ENTITY_MANAGER_FACTORY.close();
-		
-	}
-	
-	@Transactional(dontRollbackOn = Exception.class)
-	private static EntityManager getEntityManager() {
-		em = ENTITY_MANAGER_FACTORY.createEntityManager();
-		return em;
 	}
 	
 //	public static Vol getVol(String numVol) {

@@ -33,7 +33,7 @@ public class MyResource {
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public User AddUser(User user) {
-       return ConnectUser.addUser(user);
+        return ConnectUser.addUser(user);
        
     }
 }
