@@ -1,12 +1,13 @@
 package com.fr.uha.ensisa.java.restapi.model;
 
-<<<<<<< HEAD
+
 import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import com.fr.uha.ensisa.java.restapi.model.ObstacleType;
 
 @Entity
 public class Obstacle implements Serializable {

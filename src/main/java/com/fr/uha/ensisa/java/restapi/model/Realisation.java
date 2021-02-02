@@ -78,11 +78,11 @@ public class Realisation implements Serializable {
 	}
 	
 	public Map<Integer, Date> getSegmentDateRealisation() {
-		return segmentDateRealisation;
+		return null;//segmentDateRealisation;
 	}
 	
 	public void setSegmentDateRealisation(Map<Integer, Date> segmentDateRealisation) {
-		this.segmentDateRealisation = segmentDateRealisation;
+		//this.segmentDateRealisation = segmentDateRealisation;
 	}
 	
 	public Date getEndTime() {

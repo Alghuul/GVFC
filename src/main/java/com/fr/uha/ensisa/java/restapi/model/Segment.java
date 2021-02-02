@@ -11,6 +11,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import com.fr.uha.ensisa.java.restapi.model.Obstacle;
 
 @Entity
 public class Segment  implements Serializable{
@@ -20,7 +21,7 @@ public class Segment  implements Serializable{
 	@Id
 	@GeneratedValue (strategy = GenerationType.AUTO)
 	@Column(name = "segmentID", unique = true)
-	 int  segmentID;
+	int  segmentID;
 	@Column(name = "challengeID")
 	private int challengeID;
 	@Column(name = "beginPPoint")
