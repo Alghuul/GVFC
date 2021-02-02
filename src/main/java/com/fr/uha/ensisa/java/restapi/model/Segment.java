@@ -20,9 +20,9 @@ public class Segment  implements Serializable{
 	@Id
 	@GeneratedValue (strategy = GenerationType.AUTO)
 	@Column(name = "segmentID", unique = true)
-	private String segmentID;
+	 int  segmentID;
 	@Column(name = "challengeID")
-	private String challengeID;
+	private int challengeID;
 	@Column(name = "beginPPoint")
 	private PassagePoint beginPPoint;
 	@Column(name = "endPPoint") 
@@ -31,7 +31,7 @@ public class Segment  implements Serializable{
 	@Column(name = "km")
 	private long km;
 	
-	public Segment(String segmentID, String challengeID, PassagePoint beginPPoint, PassagePoint endPPoint,
+	public Segment(int segmentID, int challengeID, PassagePoint beginPPoint, PassagePoint endPPoint,
 			Map<Integer, Integer> obstacles, int km) {
 		this.segmentID = segmentID;
 		this.challengeID = challengeID;
@@ -45,11 +45,18 @@ public class Segment  implements Serializable{
 		
 	}
 	
-	public String getChallengeID() {
+	public int getSegmentID() {
+		return segmentID;
+	}
+	
+	public void setSegmentID(int segmentID) {
+		this.segmentID = segmentID;
+	}
+	public int getChallengeID() {
 		return challengeID;
 	}
 	
-	public void setChallengeID(String challengeID) {
+	public void setChallengeID(int challengeID) {
 		this.challengeID = challengeID;
 	}
 	
@@ -92,5 +99,7 @@ public class Segment  implements Serializable{
 	public void deleteObstacle(Obstacle o) {
 		this.obstacles.remove(o.getObstacleId());
 	}
+
+	
 	
 }

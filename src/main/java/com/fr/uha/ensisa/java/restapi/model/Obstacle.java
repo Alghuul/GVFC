@@ -18,7 +18,6 @@ public class Obstacle implements Serializable {
 	@Column(name = "obstacleID", unique = true)
 	private int obstacleID;
 	@Column(name ="type", nullable = false)
-
 	private ObstacleType type;
 	@Column(name ="description", nullable = false)
 	private String description;

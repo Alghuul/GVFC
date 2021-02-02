@@ -30,6 +30,10 @@ public class PassagePoint {
 		this.level = level;
 		this.description = description;
 	}
+	
+	public PassagePoint() {
+		
+	}
 
 	public int getPassagepointID() {
 		return passagepointID;
