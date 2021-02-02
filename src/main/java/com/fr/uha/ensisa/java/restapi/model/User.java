@@ -18,5 +18,9 @@ private static final long serialVersionUID = 1L;
 	private String email;
 	@Column(name = "password" , nullable = false)
 	private String password;
+	@Column(name = "lastname" , nullable = false)
+	private String lastname;
+	@Column(name = "firstname" , nullable = false)
+	private String firstname;
 	
 }
