@@ -13,53 +13,41 @@ import com.fr.uha.ensisa.java.restapi.model.User;
 
 
 
-public class ConnectUser{
+public class ConnectUser extends DAOAbstractFacade<User>{
 	
-	private static  EntityManagerFactory ENTITY_MANAGER_FACTORY = Persistence.createEntityManagerFactory("gvfc-api");
-	
+	public ConnectUser() {
+		super(User.class);
+	}
 
-	public static List<User> getAllUsers() {
-		EntityManager em = ENTITY_MANAGER_FACTORY.createEntityManager();
-		String query = "SELECT u FROM User u";
-		
-		TypedQuery<User> tq = em.createQuery(query,User.class);
-		List<User> users = null;
-		
-		try {
-			users = tq.getResultList();
-			//vols.forEach(vol -> System.out.println(vol.getNumVol()));
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		finally {
-			
-			em.close();
-		}
-		return users;
-		
-	}
-	
-	
-	
-	@Transactional
-	public static void addUser(User user) {
-		EntityManager em = ENTITY_MANAGER_FACTORY.createEntityManager();
-		String query = "INSERT INTO user (email,password,firstname,lastname) VALUES (?,?,?,?) ";
-		EntityTransaction et = null;
-		
-		
-			et = em.getTransaction();
-			et.begin();
-			em.createNativeQuery(query,User.class).
-			setParameter(1,user.getEmail())
-			.setParameter(2,user.getPassword())
-			.setParameter(3,user.getFirstName())
-			.setParameter(4,user.getLastName())
-			.executeUpdate();
-		    et.commit();
-		
-	
-	}
+//	@Transactional
+//	public static void addUser(User user) {
+//		EntityManager em = ENTITY_MANAGER_FACTORY.createEntityManager();
+//		String query = "INSERT INTO user (email,password,firstname,lastname) VALUES (?,?,?,?) ";
+//		EntityTransaction et = null;
+//		
+//		
+//			et = em.getTransaction();
+//			et.begin();
+//			em.createNativeQuery(query,User.class).
+//			setParameter(1,user.getEmail())
+//			.setParameter(2,user.getPassword())
+//			.setParameter(3,user.getFirstName())
+//			.setParameter(4,user.getLastName())
+//			.executeUpdate();
+//		    et.commit();
+//		
+//	
+//	}
+//	
+//	@Transactional
+//	public static void deleteUser(User user) {
+//		
+//	}
+//	
+//	@Transactional
+//	public static void putUser(User user) {
+//		
+//	}
 	
 //	public static Vol getVol(String numVol) {
 //		EntityManager em = ENTITY_MANAGER_FACTORY.createEntityManager();

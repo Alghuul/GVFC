@@ -26,7 +26,7 @@ public class PassagePoint implements Serializable{
 
 
 	@Id
-	@GeneratedValue (strategy = GenerationType.AUTO)
+	//@GeneratedValue (strategy = GenerationType.AUTO)
 	@Column(name="passagepointID", unique = true)
 	private int passagepointID;
 	@Column(name = "challengeID", unique = true)

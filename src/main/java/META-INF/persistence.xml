@@ -9,11 +9,8 @@
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 		<jta-data-source>jdbc/restapi</jta-data-source>
 		<class>com.fr.uha.ensisa.java.restapi.model.User</class>
-		<class>com.fr.uha.ensisa.java.restapi.model.Challenge</class>
-		<class>com.fr.uha.ensisa.java.restapi.model.Obstacle</class>
 		<class>com.fr.uha.ensisa.java.restapi.model.PassagePoint</class>
-		<class>com.fr.uha.ensisa.java.restapi.model.Segment</class>
-		<class>com.fr.uha.ensisa.java.restapi.model.Suggestion</class>
+	
 		<exclude-unlisted-classes>true</exclude-unlisted-classes>
 		<properties>
 			<property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
