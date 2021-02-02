@@ -10,9 +10,9 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 
-@Entity
+//@Entity
 public class Challenge implements Serializable{
-
+/*
 	private final static long serialVersionUID = 1L; 
 	
 	@Id
@@ -132,5 +132,5 @@ public class Challenge implements Serializable{
 		}
 		return false;
 	}	
-
+*/
 }

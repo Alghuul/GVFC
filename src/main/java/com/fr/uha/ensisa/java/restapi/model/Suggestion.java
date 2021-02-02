@@ -12,10 +12,10 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 
-@Entity
-@Table(name = "suggestion")
+//@Entity
+//@Table(name = "suggestion")
 public class Suggestion implements Serializable{
-	
+/*	
 
 	private static final long serialVersionUID = 1L;
 
@@ -92,4 +92,5 @@ public class Suggestion implements Serializable{
 	public void deleteVoter(User user) {
 		this.voters.remove(user.getEmail());
 	}
+*/
 }

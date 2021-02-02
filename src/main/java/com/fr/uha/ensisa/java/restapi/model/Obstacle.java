@@ -9,9 +9,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import com.fr.uha.ensisa.java.restapi.model.ObstacleType;
 
-@Entity
+//@Entity
 public class Obstacle implements Serializable {
-	
+/*	
 	private static final long serialVersionUID = 1L;
 	
 	@Id
@@ -56,5 +56,5 @@ public class Obstacle implements Serializable {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	
+*/
 }
