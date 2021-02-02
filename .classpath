@@ -34,5 +34,10 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/amine/Downloads/payara-5.2020.7/payara5/glassfish/modules/org.eclipse.persistence.jpa.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="https://jakarta.ee/specifications/platform/8/apidocs"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

@@ -8,23 +8,27 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
 
 @Entity
 @Table(name = "user")
 public class User implements Serializable {
 
-private static final long serialVersionUID = 1L;
+private static final long serialVersionUID = -1798070786993154676L;
 	
 	@Id
 	@Column(name = "user_id" , unique =  true)
-	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int user_id;
+	
 	@Column(name = "email", unique = true, nullable = false)
 	private String email;
+	
 	@Column(name = "password", nullable = false)
 	private String password;
-	@Column(name = "lasname", nullable = false)
+	
+	@Column(name = "lastname", nullable = false)
 	private String lastname;
+	
 	@Column(name = "firstname", nullable = false)
 	private String firstname;
 	

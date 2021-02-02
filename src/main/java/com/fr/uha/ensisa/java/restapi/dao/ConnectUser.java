@@ -7,6 +7,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
+import javax.transaction.Transactional;
 
 import com.fr.uha.ensisa.java.restapi.model.User;
 
@@ -16,6 +17,7 @@ public class ConnectUser{
 	
 	private static  EntityManagerFactory ENTITY_MANAGER_FACTORY = Persistence.createEntityManagerFactory("gvfc-api");
 	
+
 	public static List<User> getAllUsers() {
 		EntityManager em = ENTITY_MANAGER_FACTORY.createEntityManager();
 		String query = "SELECT u FROM User u";
@@ -39,33 +41,24 @@ public class ConnectUser{
 	
 	
 	
-	
-	public static User addUser(User user) {
+	@Transactional
+	public static void addUser(User user) {
 		EntityManager em = ENTITY_MANAGER_FACTORY.createEntityManager();
+		String query = "INSERT INTO user (email,password,firstname,lastname) VALUES (?,?,?,?) ";
 		EntityTransaction et = null;
-		User nuser = new User();
-		try {
+		
+		
 			et = em.getTransaction();
 			et.begin();
-			
-			nuser.setEmail(user.getEmail());
-			nuser.setFirstName(user.getFirstName());
-			nuser.setLastName(user.getLastName());
-			nuser.setPassword(user.getPassword());
-			em.persist(nuser);
-			et.commit();
-		} catch (Exception e) {
-			if (et != null)
-			{
-				et.rollback();
-			}
-			e.printStackTrace();
-		}
-		finally {
-			em.close();
-		}
-		return nuser;
+			em.createNativeQuery(query,User.class).
+			setParameter(1,user.getEmail())
+			.setParameter(2,user.getPassword())
+			.setParameter(3,user.getFirstName())
+			.setParameter(4,user.getLastName())
+			.executeUpdate();
+		    et.commit();
 		
+	
 	}
 	
 //	public static Vol getVol(String numVol) {
