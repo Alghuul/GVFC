@@ -26,20 +26,16 @@ public class PassagePoint implements Serializable{
 
 
 	@Id
-<<<<<<< HEAD
-=======
-	//@GeneratedValue (strategy = GenerationType.AUTO)
->>>>>>> c97d8f2ffb4c683e9d53139442be16642e205774
 	@Column(name="passagepointID", unique = true)
 	private int passagepointID;
 	@Column(name = "challengeID", unique = true)
-	private String challengeID;
+	private int challengeID;
 	@Column(name = "level", nullable = false)
 	private int level;
 	@Column(name = "description" , nullable = false)
 	private String description;
 	 
-	public PassagePoint( String challengeID, int level, String description) {
+	public PassagePoint( int challengeID, int level, String description) {
 		
 		this.challengeID = challengeID;
 		this.level = level;
@@ -58,11 +54,11 @@ public class PassagePoint implements Serializable{
 		this.passagepointID = passagepointID;
 	}
 
-	public String getChallengeID() {
+	public int getChallengeID() {
 		return challengeID;
 	}
 
-	public void setChallengeID(String challengeID) {
+	public void setChallengeID(int challengeID) {
 		this.challengeID = challengeID;
 	}
 
