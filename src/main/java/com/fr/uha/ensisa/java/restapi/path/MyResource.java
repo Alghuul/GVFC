@@ -5,7 +5,9 @@ import java.util.List;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 
+import com.fr.uha.ensisa.java.restapi.dao.ConnectPassagePoint;
 import com.fr.uha.ensisa.java.restapi.dao.ConnectUser;
+import com.fr.uha.ensisa.java.restapi.model.PassagePoint;
 import com.fr.uha.ensisa.java.restapi.model.User;
 
 
@@ -34,5 +36,17 @@ public class MyResource {
     public void AddUser(User user) {
         ConnectUser.addUser(user);
        
+    }
+    
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<PassagePoint> getAllPassagePoint(){
+    	return ConnectPassagePoint.getAllPassagePoints();
+    }
+    
+    @POST
+    @Consumes(MediaType.APPLICATION_JSON)
+    public void addPassagePoint(PassagePoint pp) {
+    	ConnectPassagePoint.addPassagePoint(pp);
     }
 }

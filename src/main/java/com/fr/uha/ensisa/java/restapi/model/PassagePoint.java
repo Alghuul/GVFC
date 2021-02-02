@@ -13,20 +13,19 @@ import javax.persistence.Table;
 
 
 
-//@Entity
-//@Table(name = "passagepoint")
+@Entity
+@Table(name = "passagepoint")
 public class PassagePoint implements Serializable{
 
 
 	/**
 	 * 
 	 */
-/*	private static final long serialVersionUID = 7714770575023878228L;
+	private static final long serialVersionUID = 7714770575023878228L;
 
 
 
 	@Id
-	@GeneratedValue (strategy = GenerationType.AUTO)
 	@Column(name="passagepointID", unique = true)
 	private int passagepointID;
 	@Column(name = "challengeID", unique = true)
@@ -36,9 +35,8 @@ public class PassagePoint implements Serializable{
 	@Column(name = "description" , nullable = false)
 	private String description;
 	 
-	public PassagePoint(int passagepointID, String challengeID, int level, String description) {
-		super();
-		this.passagepointID = passagepointID;
+	public PassagePoint( String challengeID, int level, String description) {
+		
 		this.challengeID = challengeID;
 		this.level = level;
 		this.description = description;
@@ -79,5 +77,5 @@ public class PassagePoint implements Serializable{
 	public void setDescription(String description) {
 		this.description = description;
 	}
-*/	
+	
 }

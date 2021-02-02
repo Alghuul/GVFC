@@ -47,18 +47,15 @@ public class ConnectUser{
 		String query = "INSERT INTO user (email,password,firstname,lastname) VALUES (?,?,?,?) ";
 		EntityTransaction et = null;
 		
-		
-			et = em.getTransaction();
-			et.begin();
-			em.createNativeQuery(query,User.class).
-			setParameter(1,user.getEmail())
-			.setParameter(2,user.getPassword())
-			.setParameter(3,user.getFirstName())
-			.setParameter(4,user.getLastName())
-			.executeUpdate();
-		    et.commit();
-		
-	
+		et = em.getTransaction();
+		et.begin();
+		em.createNativeQuery(query,User.class).
+		setParameter(1,user.getEmail())
+		.setParameter(2,user.getPassword())
+		.setParameter(3,user.getFirstName())
+		.setParameter(4,user.getLastName())
+		.executeUpdate();
+	    et.commit();
 	}
 	
 //	public static Vol getVol(String numVol) {
