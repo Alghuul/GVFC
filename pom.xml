@@ -105,7 +105,13 @@
    			<artifactId>hibernate-entitymanager</artifactId>
     		<version>5.4.27.Final</version>
 		</dependency>
-      </dependencies>
+		<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+		<dependency>
+    		<groupId>mysql</groupId>
+    		<artifactId>mysql-connector-java</artifactId>
+    		<version>8.0.23</version>
+		</dependency>
+	</dependencies>
     <properties>
      	<jersey.version>3.0.0</jersey.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
