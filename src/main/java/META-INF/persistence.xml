@@ -9,6 +9,11 @@ version="2.0">
 		<jta-data-source>jdbc/gvfc_api</jta-data-source>
 		
 		<class>com.fr.uha.ensisa.java.restapi.model.User</class>
+		<class>com.fr.uha.ensisa.java.restapi.model.Challenge</class>
+		<class>com.fr.uha.ensisa.java.restapi.model.Obstacle</class>
+		<class>com.fr.uha.ensisa.java.restapi.model.PassagePoint</class>
+		<class>com.fr.uha.ensisa.java.restapi.model.Segment</class>
+		<class>com.fr.uha.ensisa.java.restapi.model.Suggestion</class>
 		<exclude-unlisted-classes>false</exclude-unlisted-classes>
 		<properties>
 			<property name="eclipselink.ddl-generation" value="create-tables" />

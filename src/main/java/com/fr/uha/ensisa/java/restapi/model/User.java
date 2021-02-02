@@ -25,6 +25,7 @@ private static final long serialVersionUID = 1L;
 	public User() {
 		
 	}
+
 	
 	public User(String firstname,String lastname,String email, String password) {
 		this.firstname = firstname;
@@ -62,7 +63,7 @@ private static final long serialVersionUID = 1L;
 	}
 	
 	public void setPassword(String password) {
-		this.firstname = firstname;
+		this.password = password;
 	}
 	
 }

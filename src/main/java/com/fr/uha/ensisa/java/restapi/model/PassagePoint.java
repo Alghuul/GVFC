@@ -9,7 +9,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class PassagePoint implements Serializable{
+public class PassagePoint {
+
 
 	@Id
 	@GeneratedValue (strategy = GenerationType.AUTO)

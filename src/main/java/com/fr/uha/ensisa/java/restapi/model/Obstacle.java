@@ -1,5 +1,6 @@
 package com.fr.uha.ensisa.java.restapi.model;
 
+<<<<<<< HEAD
 import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.Column;
@@ -17,6 +18,7 @@ public class Obstacle implements Serializable {
 	@Column(name = "obstacleID", unique = true)
 	private int obstacleID;
 	@Column(name ="type", nullable = false)
+
 	private ObstacleType type;
 	@Column(name ="description", nullable = false)
 	private String description;
