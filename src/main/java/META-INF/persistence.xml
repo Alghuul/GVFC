@@ -5,21 +5,12 @@ xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/x
 
 	<persistence-unit name="gvfc-api" transaction-type="JTA">
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-		
+		<jta-data-source>jdbc/restapi</jta-data-source>
 		
 		<class>com.fr.uha.ensisa.java.restapi.model.User</class>
-		<class>com.fr.uha.ensisa.java.restapi.model.Challenge</class>
-		<class>com.fr.uha.ensisa.java.restapi.model.Obstacle</class>
-		<class>com.fr.uha.ensisa.java.restapi.model.PassagePoint</class>
-		<class>com.fr.uha.ensisa.java.restapi.model.Segment</class>
-		<class>com.fr.uha.ensisa.java.restapi.model.Suggestion</class>
 		<exclude-unlisted-classes>false</exclude-unlisted-classes>
 		<properties>
 			<property name="eclipselink.ddl-generation" value="create-tables" />
-			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
-            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/gvfc" />
-            <property name="javax.persistence.jdbc.user" value="root" />
-            <property name="javax.persistence.jdbc.password" value="toor" />
 		</properties>
 
 	</persistence-unit>
