@@ -9,26 +9,27 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
-import com.fr.uha.ensisa.java.restapi.dao.ConnectPassagePoint;
+import com.fr.uha.ensisa.java.restapi.controllers.PassagePointManager;
+import com.fr.uha.ensisa.java.restapi.dao.DAOPassagePoint;
 
 import com.fr.uha.ensisa.java.restapi.model.PassagePoint;
 
 
 @Path("passagepoint")
 public class PassagePointResource {
-	ConnectPassagePoint cu = new ConnectPassagePoint();
 	   
 	@SuppressWarnings("unchecked")
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	 public List<PassagePoint> getIt() {
-	        return cu.getAll();
+	        return PassagePointManager.getPassagePoints();
 	    }
 	
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
-    public void AddUser(PassagePoint pp) {
-        cu.add(pp);
+	@Produces(MediaType.APPLICATION_JSON)
+    public boolean AddUser(PassagePoint pp) {
+    	return PassagePointManager.createPassagePoint(pp);
     }
     
     
