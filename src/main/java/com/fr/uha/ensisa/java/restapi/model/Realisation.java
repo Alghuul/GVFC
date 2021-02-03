@@ -17,13 +17,13 @@ public class Realisation implements Serializable {
 	@GeneratedValue (strategy = GenerationType.AUTO)
 	@Column(name = "realisationID", unique = true)
 	private int realisationID;
-	@Column(name = "uder_id" , nullable = false)
+	@Column(name = "user_id" , nullable = true)
 	private int user_id;
-	@Column(name = "ChallengeID", nullable = false)
+	@Column(name = "challengeID", nullable = true)
 	private int challengeID;
-	@Column(name = "distance", nullable = false)
+	@Column(name = "distance", nullable = true)
 	private int km;
-	@Column(name = "mmode", nullable = false)
+	@Column(name = "mmode", nullable = true)
 	private String mmode;
 	
 	public Realisation() {

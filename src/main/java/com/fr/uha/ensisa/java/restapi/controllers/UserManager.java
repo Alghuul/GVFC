@@ -21,8 +21,8 @@ public class UserManager {
 		return u;
 	}
 
-	public static User login(String login, String password) {
-		User u = daoUser.findByid(login);
+	public static User login(int id , String password) {
+		User u = daoUser.findByid(id);
 		if (u != null && u.getPassword().equals(password))
 			return u;
 		return null;

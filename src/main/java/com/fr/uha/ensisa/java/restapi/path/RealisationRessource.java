@@ -14,8 +14,10 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 
+import com.fr.uha.ensisa.java.restapi.controllers.ObstacleManager;
 import com.fr.uha.ensisa.java.restapi.controllers.RealisationManager;
 import com.fr.uha.ensisa.java.restapi.controllers.UserManager;
+import com.fr.uha.ensisa.java.restapi.model.Obstacle;
 import com.fr.uha.ensisa.java.restapi.model.Realisation;
 import com.fr.uha.ensisa.java.restapi.model.User;
 
@@ -46,12 +48,11 @@ public class RealisationRessource {
 		return Response.status(Status.CONFLICT).build();
 
     }
-    
-//    @PUT
-//    @Consumes(MediaType.APPLICATION_JSON)
-//    public void updateUser(User user)
-//    {
-//    		UserManager.putUser(user);
-//    }
 
+    @PUT
+    @Consumes(MediaType.APPLICATION_JSON)
+    public void updateUser(Realisation challenge)
+    {
+    		RealisationManager.putRealisation(challenge);
+    }
 }

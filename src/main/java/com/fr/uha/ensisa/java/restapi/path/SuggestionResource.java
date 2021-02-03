@@ -5,7 +5,9 @@ import java.util.List;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 
+import com.fr.uha.ensisa.java.restapi.controllers.SegmentManager;
 import com.fr.uha.ensisa.java.restapi.controllers.SuggestionManager;
+import com.fr.uha.ensisa.java.restapi.model.Segment;
 import com.fr.uha.ensisa.java.restapi.model.Suggestion;
 
 @Path("suggestion")
@@ -30,13 +32,13 @@ public class SuggestionResource {
 	    {
 	        return SuggestionManager.deleteSuggestion(Integer.parseInt(id));
 	    }
+	    
+	    @PUT
+	    @Consumes(MediaType.APPLICATION_JSON)
+	    public void updateUser(Suggestion challenge)
+	    {
+	    		SuggestionManager.putSuggestion(challenge);
+	    }
 
 
-//	    @POST
-//	    @Path("/vote")
-//	    @Produces(MediaType.APPLICATION_JSON)
-//	    public boolean addVoter(@QueryParam("userid") String userid,@QueryParam("suggestionid") String suggestionid) {
-//	        return SuggestionManager.addVoter(Integer.parseInt(userid), Integer.parseInt(suggestionid));
-//
-//	     }
 }

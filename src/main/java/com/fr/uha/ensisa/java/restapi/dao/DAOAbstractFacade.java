@@ -120,7 +120,7 @@ public abstract class DAOAbstractFacade<T> {
 			et = em.getTransaction();
 			et.begin();
 			entity = em.find(this.classEntities,id);
-			
+			et.commit();
 		} catch (Exception e) {
 			if (et != null)
 			{

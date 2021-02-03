@@ -7,8 +7,9 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 
+import com.fr.uha.ensisa.java.restapi.controllers.ObstacleManager;
 import com.fr.uha.ensisa.java.restapi.controllers.PassagePointManager;
-import com.fr.uha.ensisa.java.restapi.controllers.UserManager;
+import com.fr.uha.ensisa.java.restapi.model.Obstacle;
 import com.fr.uha.ensisa.java.restapi.model.PassagePoint;
 
 
@@ -38,6 +39,13 @@ public class PassagePointResource {
    		return Response.status(Status.CONFLICT).build();
 
        }
+    
+    @PUT
+    @Consumes(MediaType.APPLICATION_JSON)
+    public void updateUser(PassagePoint challenge)
+    {
+    		PassagePointManager.putPp(challenge);
+    }
     
     
 }

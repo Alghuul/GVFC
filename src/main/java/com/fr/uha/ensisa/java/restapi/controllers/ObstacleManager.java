@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.fr.uha.ensisa.java.restapi.dao.DAOObstacle;
 import com.fr.uha.ensisa.java.restapi.model.Obstacle;
+import com.fr.uha.ensisa.java.restapi.model.PassagePoint;
 
 public class ObstacleManager {
 
@@ -20,21 +21,25 @@ public class ObstacleManager {
 	}
 	
 	public static boolean createObstacle(Obstacle obstacle) {
-		//Obstacle o = daoObstacle.findByid(s.getObstacleID());
-		//if (o == null) {
+		Obstacle o = daoObstacle.findByid(obstacle.getObstacleID());
+		if (o == null) {
 			daoObstacle.add(obstacle);
 			return true;
-		//}
-		//return false;
+		}
+		return false;
 	}
 	
 	public static boolean deleteObstacle(int obstacleID) {
 		Obstacle o = daoObstacle.findByid(obstacleID);
-		if (o == null) {
+		if (o != null) {
 			daoObstacle.delete(obstacleID);
 			return true;
 		}
 		return false;		
 	}
+	public static void putObstacle(Obstacle o) {
+		daoObstacle.put(o);
+	}
+
 
 }

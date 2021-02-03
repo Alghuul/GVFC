@@ -5,6 +5,7 @@ import java.util.List;
 import com.fr.uha.ensisa.java.restapi.dao.DAOSegment;
 import com.fr.uha.ensisa.java.restapi.model.Segment;
 import com.fr.uha.ensisa.java.restapi.model.Suggestion;
+import com.fr.uha.ensisa.java.restapi.model.User;
 
 public class SegmentManager {
 	static DAOSegment daoSegment = new DAOSegment();
@@ -23,12 +24,12 @@ public class SegmentManager {
 	}
 	
 	public static boolean createSegment(Segment Segment) {
-		//Segment u = daoSegment.findByid(Segment.getSegmentID());
-		//if (u == null) {
+		Segment u = daoSegment.findByid(Segment.getSegmentID());
+		if (u == null) {
 			daoSegment.add(Segment);
 			return true;
-		//}
-		//return false;
+		}
+		return false;
 	}
 
 	public static boolean deleteSegment(int SegmentID) {
@@ -39,5 +40,10 @@ public class SegmentManager {
 		}
 		return false;		
 	}	
+	
+	public static void putSegment(Segment segment) {
+		
+		daoSegment.put(segment);
+	}
 
 }

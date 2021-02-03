@@ -18,20 +18,20 @@ public class Obstacle implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	@Id
-	@GeneratedValue (strategy = GenerationType.AUTO)
+	//@GeneratedValue (strategy = GenerationType.AUTO)
 	@Column(name = "obstacleID", unique = true)
 	private int obstacleID;
 	
-	@Column(name ="pos", nullable = false)
+	@Column(name ="pos", nullable = true)
 	private int pos;
 	
-	@Column(name ="segementID", nullable = false)
+	@Column(name ="segmentID", nullable = true)
 	private int segementID;
 	
-	@Column(name ="type", nullable = false)
+	@Column(name ="type", nullable =  true)
 	private String type;
 	
-	@Column(name ="description", nullable = false)
+	@Column(name ="description", nullable =  true)
 	private String description;
 	
 	public Obstacle() {

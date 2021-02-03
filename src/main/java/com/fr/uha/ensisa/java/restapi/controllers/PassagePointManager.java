@@ -38,4 +38,10 @@ public class PassagePointManager {
 		return false;		
 	}
 
+	public static void putPp(PassagePoint r) {
+			daoPassagePoint.put(r);
+		}
+	
+	
+
 }

@@ -20,12 +20,12 @@ public class SuggestionManager {
 	}
 	
 	public static boolean createSuggestion(Suggestion s) {
-		//Suggestion u = daoSuggestion.findByid(s.getSuggestionID());
-		//if (u == null) {
+		Suggestion u = daoSuggestion.findByid(s.getSuggestionID());
+		if (u == null) {
 			daoSuggestion.add(s);
 			return true;
-		//}
-		//return false;
+		}
+		return false;
 	}
 	
 	public static boolean deleteSuggestion(int suggestionID) {
@@ -35,6 +35,10 @@ public class SuggestionManager {
 			return true;
 		}
 		return false;		
+	}
+	
+	public static void putSuggestion(Suggestion s) {
+		daoSuggestion.put(s);
 	}
 
 }

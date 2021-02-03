@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.fr.uha.ensisa.java.restapi.dao.DAORealisation;
 import com.fr.uha.ensisa.java.restapi.model.Realisation;
+import com.fr.uha.ensisa.java.restapi.model.Segment;
 
 public class RealisationManager {
 	static DAORealisation daoRealisation = new DAORealisation();
@@ -19,12 +20,12 @@ public class RealisationManager {
 	}
 	
 	public static boolean createRealisation(Realisation realisation) {
-		//Realisation r = daoRealisation.findByid(s.getRealisationID());
-		//if (r == null) {
+		Realisation r = daoRealisation.findByid(realisation.getRealisationID());
+		if (r == null) {
 			daoRealisation.add(realisation);
 			return true;
-		//}
-		//return false;
+		}
+		return false;
 	}
 	
 	public static boolean deleteRealisation(int RealisationID) {
@@ -34,6 +35,9 @@ public class RealisationManager {
 			return true;
 		}
 		return false;		
+	}
+	public static void putRealisation(Realisation r) {
+		daoRealisation.put(r);
 	}
 
 }

@@ -14,17 +14,18 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 
+import com.fr.uha.ensisa.java.restapi.controllers.ChallengeManager;
 import com.fr.uha.ensisa.java.restapi.controllers.ObstacleManager;
 import com.fr.uha.ensisa.java.restapi.controllers.UserManager;
+import com.fr.uha.ensisa.java.restapi.model.Challenge;
 import com.fr.uha.ensisa.java.restapi.model.Obstacle;
 import com.fr.uha.ensisa.java.restapi.model.User;
 
+@Path("obstacle")
 public class ObstacleRessource {
 	
-	@Path("obstacle")
-	public class UserResource {
 
-		@SuppressWarnings("unchecked")
+		
 
 		@GET
 		@Produces(MediaType.APPLICATION_JSON)
@@ -34,7 +35,7 @@ public class ObstacleRessource {
 		
 	    @POST
 	    @Consumes(MediaType.APPLICATION_JSON)
-		  @Produces(MediaType.APPLICATION_JSON)
+		 @Produces(MediaType.APPLICATION_JSON)
 	    public boolean addObstacle(Obstacle obstacle) {
 	       return ObstacleManager.createObstacle(obstacle);
 	       
@@ -50,14 +51,13 @@ public class ObstacleRessource {
 
 	    }
 	    
-//	    @PUT
-//	    @Consumes(MediaType.APPLICATION_JSON)
-//	    public void updateObstacle(Obstacle obstacle)
-//	    {
-//	    	ObstacleManager.putObstacle(obstacle);
-//	    }
-
-	}
-
-
+	    @PUT
+	    @Consumes(MediaType.APPLICATION_JSON)
+	    public void updateUser(Obstacle challenge)
+	    {
+	    		ObstacleManager.putObstacle(challenge);
+	    }
+	    
 }
+
+

@@ -17,23 +17,26 @@ import javax.persistence.Table;
 public class Suggestion implements Serializable{
 
 
-	private static final long serialVersionUID = 1L;
+	
+
+	
+	private static final long serialVersionUID = -2520286691081019294L;
 
 	@Id
-	@GeneratedValue (strategy = GenerationType.AUTO)
+	//@GeneratedValue (strategy = GenerationType.AUTO)
 	@Column(name = "suggestionID", unique = true)
 	private int suggestionID;
 	
-	@Column(name="creatorID" , nullable = false)
+	@Column(name="creatorID" , nullable = true)
 	private int creatorID;
 	
-	@Column(name ="voterID")
+	@Column(name ="voterID" , nullable = true)
 	private int voterID;
 	
-	@Column(name="theme" , nullable = false)
+	@Column(name="theme" , nullable = true)
 	private String theme;
 	
-	@Column(name="isValidated" , nullable = false)
+	@Column(name="isValidated" , nullable = true)
 	private int isValidated;
 	
 	

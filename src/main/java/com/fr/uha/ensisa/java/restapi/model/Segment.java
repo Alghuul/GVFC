@@ -21,20 +21,20 @@ public class Segment  implements Serializable{
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue (strategy = GenerationType.AUTO)
+	//@GeneratedValue (strategy = GenerationType.AUTO)
 	@Column(name = "segmentID", unique = true)
 	int  segmentID;
 	
-	@Column(name = "challengeID")
+	@Column(name = "challengeID", nullable = true)
 	private int challengeID;
 	
-	@Column(name = "beginPPointID")
+	@Column(name = "beginPPointID", nullable = true)
 	private int beginPPointID;
 	
-	@Column(name = "endPPointID") 
+	@Column(name = "endPPointID", nullable = true) 
 	private int endPPointID;
 	
-	@Column(name = "distance")
+	@Column(name = "distance", nullable = true)
 	private int distance;
 	
 	

@@ -26,9 +26,9 @@ public class PassagePoint implements Serializable{
 	private int passagepointID;
 	@Column(name = "challengeID", unique = true)
 	private int challengeID;
-	@Column(name = "level", nullable = false)
+	@Column(name = "level", nullable = true)
 	private int level;
-	@Column(name = "description" , nullable = false)
+	@Column(name = "description" , nullable = true)
 	private String description;
 	 
 	public PassagePoint( int challengeID, int level, String description) {

@@ -28,10 +28,10 @@ public class UserResource {
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response signin(@QueryParam("login") String login, @QueryParam("password") String password)
 	{
-		User u = UserManager.login(login, password);
+		User u = UserManager.login(Integer.parseInt(login), password);
 		if (u != null)
 			return Response.status(Status.ACCEPTED).build();
-		return Response.status(Status.NOT_FOUND).build();
+		return Response.status(Status.CONFLICT).build();
 	}
 	
 	
