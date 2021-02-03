@@ -14,97 +14,96 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 
-//@Entity
-//@Table(name = "segment")
+@Entity
+@Table(name = "segment")
 public class Segment  implements Serializable{
-/*
+
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue (strategy = GenerationType.AUTO)
 	@Column(name = "segmentID", unique = true)
 	int  segmentID;
+	
 	@Column(name = "challengeID")
 	private int challengeID;
-	@Column(name = "beginPPoint")
-	private PassagePoint beginPPoint;
-	@Column(name = "endPPoint") 
-	private PassagePoint endPPoint;
-	private Map<Integer, Integer> obstacles ;
-	@Column(name = "km")
-	private long km;
 	
-	public Segment(int segmentID, int challengeID, PassagePoint beginPPoint, PassagePoint endPPoint,
-			Map<Integer, Integer> obstacles, int km) {
-		this.segmentID = segmentID;
-		this.challengeID = challengeID;
-		this.beginPPoint = beginPPoint;
-		this.endPPoint = endPPoint;
-		this.obstacles = obstacles;
-		this.km = km;
-	}
+	@Column(name = "beginPPointID")
+	private int beginPPointID;
+	
+	@Column(name = "endPPointID") 
+	private int endPPointID;
+	
+	@Column(name = "distance")
+	private int distance;
+	
+	
 	
 	public Segment() {
 		
 	}
-	
+
+
+
 	public int getSegmentID() {
 		return segmentID;
 	}
-	
+
+
+
 	public void setSegmentID(int segmentID) {
 		this.segmentID = segmentID;
 	}
+
+
+
 	public int getChallengeID() {
 		return challengeID;
 	}
-	
+
+
+
 	public void setChallengeID(int challengeID) {
 		this.challengeID = challengeID;
 	}
-	
-	public PassagePoint getBeginPPoint() {
-		return beginPPoint;
-	}
-	
-	public void setBeginPPoint(PassagePoint beginPPoint) {
-		this.beginPPoint = beginPPoint;
-	}
-	
-	public PassagePoint getEndPPoint() {
-		return endPPoint;
-	}
-	
-	public void setEndPPoint(PassagePoint endPPoint) {
-		this.endPPoint = endPPoint;
-	}
-	
-	public long getKm() {
-		return km;
-	}
-	
-	public void setKm(long km) {
-		this.km = km;
-	}
-	
-	public Map<Integer, Integer> getObstacles() {
-		return obstacles;
-	}
-	
-	public void setObstacles(Map<Integer, Integer> obstacles) {
-		this.obstacles = obstacles;
-	}
-	
-	public void addObstacle(Obstacle o, Integer km) {
-		this.obstacles.put(o.getObstacleId(),km );
+
+
+
+	public int getBeginPPointID() {
+		return beginPPointID;
 	}
 
-	public void deleteObstacle(Obstacle o) {
-		this.obstacles.remove(o.getObstacleId());
+
+
+	public void setBeginPPointID(int beginPPointID) {
+		this.beginPPointID = beginPPointID;
 	}
 
+
+
+	public int getEndPPointID() {
+		return endPPointID;
+	}
+
+
+
+	public void setEndPPointID(int endPPointID) {
+		this.endPPointID = endPPointID;
+	}
+
+
+
+	public int getDistance() {
+		return distance;
+	}
+
+
+
+	public void setDistance(int distance) {
+		this.distance = distance;
+	}
 	
-*/
+	
 }
 
 

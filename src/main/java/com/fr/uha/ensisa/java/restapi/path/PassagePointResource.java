@@ -16,7 +16,7 @@ import com.fr.uha.ensisa.java.restapi.model.PassagePoint;
 public class PassagePointResource {
 	
 	   
-	@SuppressWarnings("unchecked")
+	
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	 public List<PassagePoint> getIt() {

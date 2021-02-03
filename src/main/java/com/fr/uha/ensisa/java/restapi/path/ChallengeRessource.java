@@ -46,12 +46,12 @@ public class ChallengeRessource {
 		return Response.status(Status.CONFLICT).build();
 
     }
-//    
-//    @PUT
-//    @Consumes(MediaType.APPLICATION_JSON)
-//    public void updateUser(User user)
-//    {
-//    		UserManager.putUser(user);
-//    }
+   
+    @PUT
+    @Consumes(MediaType.APPLICATION_JSON)
+    public void updateUser(Challenge challenge)
+    {
+    		ChallengeManager.putChallenge(challenge);
+    }
 
 }

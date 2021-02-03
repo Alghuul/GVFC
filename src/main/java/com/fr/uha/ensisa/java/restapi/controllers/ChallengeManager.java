@@ -20,12 +20,12 @@ public class ChallengeManager {
 	}
 	
 	public static boolean createChallenge(Challenge challenge) {
-		//Challenge c = daoChallenge.findByid(s.getChallengeID());
-		//if (c == null) {
+		Challenge c = daoChallenge.findByid(challenge.getChallengeID());
+		if (c == null) {
 			daoChallenge.add(challenge);
 			return true;
-		//}
-		//return false;
+		}
+		return false;
 	}
 	
 	public static boolean deleteChallenge(int ChallengeID) {
@@ -35,6 +35,11 @@ public class ChallengeManager {
 			return true;
 		}
 		return false;		
+	}
+
+	public static void putChallenge(Challenge challenge) {
+		daoChallenge.put(challenge);
+		
 	}
 
 }

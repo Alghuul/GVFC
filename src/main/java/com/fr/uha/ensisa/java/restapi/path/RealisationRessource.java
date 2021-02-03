@@ -31,7 +31,7 @@ public class RealisationRessource {
 	
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
-	  @Produces(MediaType.APPLICATION_JSON)
+	@Produces(MediaType.APPLICATION_JSON)
     public boolean addRealisation(Realisation realisation) {
        return RealisationManager.createRealisation(realisation);
        

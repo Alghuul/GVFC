@@ -8,11 +8,13 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 
-//@Entity
+@Entity
+@Table(name ="challenge")
 public class Challenge implements Serializable{
-/*
+
 	private final static long serialVersionUID = 1L; 
 	
 	@Id
@@ -25,33 +27,23 @@ public class Challenge implements Serializable{
 	@Column(name = "description", nullable = true)
 	private String description;
 	
-	@Column(name = "maximumPlayers", nullable = false)
-	private int maximumPlayers;	
+	@Column(name = "maxplayer", nullable = false)
+	private int maxplayer;	
 	
-	@Column(name = "displayInHomePage", nullable = true)
-	private boolean displayInHomePage;
+	@Column(name = "display", nullable = true)
+	private int display;
 	
-	@Column(name = "segments", nullable = true)
-	private List<Integer> segments;	
+	@Column(name = "segmentID", nullable = true)
+	private int segmentID;	
 	
-	@Column(name = "administrators", nullable = true)
-	private List<Integer> administrators;	
+	@Column(name = "adminID", nullable = true)
+	private int adminID;	
+	
 	
 	@Column(name = "ended", nullable = true)
-	private boolean ended;
+	private int ended;
 
 	public Challenge() {}
-	
-
-	public Challenge(String name, String description, int maximumPlayers, List<Integer> segments) {
-		this.name = name;
-		this.description = description;
-		this.maximumPlayers = maximumPlayers;
-		this.segments = segments;
-		this.displayInHomePage = false;
-		this.administrators = new ArrayList<Integer>();
-		this.ended = false;
-	}
 
 	public int getChallengeID() {
 		return challengeID;
@@ -77,60 +69,46 @@ public class Challenge implements Serializable{
 		this.description = description;
 	}
 
-	public int getMaximumPlayers() {
-		return maximumPlayers;
+	public int getMaxplayer() {
+		return maxplayer;
 	}
 
-	public void setMaximumPlayers(int maximumPlayers) {
-		this.maximumPlayers = maximumPlayers;
+	public void setMaxplayer(int maxplayer) {
+		this.maxplayer = maxplayer;
 	}
 
-	public boolean isDisplayInHomePage() {
-		return displayInHomePage;
+	public int getDisplay() {
+		return display;
 	}
 
-	public void setDisplayInHomePage(boolean displayInHomePage) {
-		this.displayInHomePage = displayInHomePage;
+	public void setDisplay(int display) {
+		this.display = display;
 	}
 
-	public List<Integer> getSegments() {
-		return segments;
+	public int getSegmentID() {
+		return segmentID;
 	}
 
-	public void setSegments(List<Integer> segments) {
-		this.segments = segments;
+	public void setSegmentID(int segmentID) {
+		this.segmentID = segmentID;
 	}
 
-	public List<Integer> getAdministrators() {
-		return administrators;
+	public int getAdminID() {
+		return adminID;
 	}
 
-	public void setAdministrators(List<Integer> administrators) {
-		this.administrators = administrators;
+	public void setAdminID(int adminID) {
+		this.adminID = adminID;
 	}
 
-	public boolean isEnded() {
+	public int getEnded() {
 		return ended;
 	}
 
-	public void setEnded(boolean ended) {
+	public void setEnded(int ended) {
 		this.ended = ended;
 	}
 	
-	public boolean addAdministrator(int adminID) {
-		if (!this.administrators.contains(adminID)) {
-			this.administrators.add(adminID);
-			return true;
-		}
-		return false;
-	}
+
 	
-	public boolean addSegment(int segmentID) {
-		if (!this.administrators.contains(segmentID)) {
-			this.administrators.add(segmentID);
-			return true;
-		}
-		return false;
-	}	
-*/
 }
