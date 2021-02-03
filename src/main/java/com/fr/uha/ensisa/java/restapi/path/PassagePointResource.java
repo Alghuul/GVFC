@@ -23,12 +23,13 @@ public class PassagePointResource {
 	@Produces(MediaType.APPLICATION_JSON)
 	 public List<PassagePoint> getIt() {
 	        return cu.getAll();
-	    } 
+	    }
 	
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     public void AddUser(PassagePoint pp) {
         cu.add(pp);
-       
     }
+    
+    
 }

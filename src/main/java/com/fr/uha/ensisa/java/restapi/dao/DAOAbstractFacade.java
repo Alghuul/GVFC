@@ -11,6 +11,7 @@ import javax.transaction.Transactional;
 
 
 
+
 public abstract class DAOAbstractFacade<T> {
 
 	private static  EntityManagerFactory ENTITY_MANAGER_FACTORY = Persistence.createEntityManagerFactory("gvfc-api");
@@ -63,9 +64,72 @@ public abstract class DAOAbstractFacade<T> {
 		}
 	}
 	
+	public  void putVol(T entity) {
+		EntityManager em = ENTITY_MANAGER_FACTORY.createEntityManager();
+		EntityTransaction et = null;
+		try {
+			et = em.getTransaction();
+			et.begin();
+			em.merge(entity);
+			et.commit();
+		} catch (Exception e) {
+			if (et != null)
+			{
+				et.rollback();
+			}
+			e.printStackTrace();
+		}
+		finally {
+			em.close();
+		}
 	
+	}
 	
+	public  void delete(Object id ) {
+		EntityManager em = ENTITY_MANAGER_FACTORY.createEntityManager();
+		EntityTransaction et = null;
+		try {
+			et = em.getTransaction();
+			et.begin();
+			T entity = em.find(this.classEntities,id);
+			em.remove(entity);
+			em.persist(entity);
+			et.commit();
+		} catch (Exception e) {
+			if (et != null)
+			{
+				et.rollback();
+			}
+			e.printStackTrace();
+		}
+		finally {
+			em.close();
+		}
 	
+	}
+	
+	public T findByid( Object id)
+	{
+		EntityManager em = ENTITY_MANAGER_FACTORY.createEntityManager();
+		EntityTransaction et = null;
+		T entity = null;
+		try {
+			et = em.getTransaction();
+			et.begin();
+			entity = em.find(this.classEntities,id);
+			
+		} catch (Exception e) {
+			if (et != null)
+			{
+				et.rollback();
+			}
+			e.printStackTrace();
+		}
+		finally {
+			em.close();
+		}
+		return entity;
+	}
 	
 	public Class<T> getClassEntities() {
 		return classEntities;

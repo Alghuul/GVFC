@@ -5,13 +5,7 @@ import java.util.List;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 
-import com.fr.uha.ensisa.java.restapi.dao.ConnectPassagePoint;
 import com.fr.uha.ensisa.java.restapi.dao.ConnectUser;
-<<<<<<< HEAD:src/main/java/com/fr/uha/ensisa/java/restapi/path/MyResource.java
-import com.fr.uha.ensisa.java.restapi.model.PassagePoint;
-=======
-import com.fr.uha.ensisa.java.restapi.dao.DAOAbstractFacade;
->>>>>>> c97d8f2ffb4c683e9d53139442be16642e205774:src/main/java/com/fr/uha/ensisa/java/restapi/path/UserResource.java
 import com.fr.uha.ensisa.java.restapi.model.User;
 
 
@@ -33,26 +27,32 @@ public class UserResource {
 	@SuppressWarnings("unchecked")
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
-	 public List<User> getIt() {
+	 public List<User> getUsers() {
 	        return cu.getAll();
 	    }
 	
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
-    public void AddUser(User user) {
+    public void addUser(User user) {
         cu.add(user);
        
     }
     
-    @GET
-    @Produces(MediaType.APPLICATION_JSON)
-    public List<PassagePoint> getAllPassagePoint(){
-    	return ConnectPassagePoint.getAllPassagePoints();
+    @DELETE
+    @Path("{id}")
+    public void deleteUser(@PathParam("id") String id)
+    {
+    	cu.delete(Integer.parseInt(id));
     }
     
-    @POST
+    @PUT
+    @Path("{id}")
     @Consumes(MediaType.APPLICATION_JSON)
-    public void addPassagePoint(PassagePoint pp) {
-    	ConnectPassagePoint.addPassagePoint(pp);
+    @Produces(MediaType.APPLICATION_JSON)
+    public void updateUser(@PathParam("id") String id, User user)
+    {
+    	
     }
+    
+    
 }
