@@ -5,14 +5,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Column;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 
 import javax.persistence.Id;
 
 
-//@Entity
+@Entity
 public class Challenge implements Serializable{
-/*
+
 	private final static long serialVersionUID = 1L; 
 	
 	@Id
@@ -31,10 +32,12 @@ public class Challenge implements Serializable{
 	@Column(name = "displayInHomePage", nullable = true)
 	private boolean displayInHomePage;
 	
-	@Column(name = "segments", nullable = true)
+	//@Column(name = "segments", nullable = true)
+	@ElementCollection
 	private List<Integer> segments;	
 	
-	@Column(name = "administrators", nullable = true)
+	//@Column(name = "administrators", nullable = true)
+	@ElementCollection
 	private List<Integer> administrators;	
 	
 	@Column(name = "ended", nullable = true)
@@ -132,5 +135,5 @@ public class Challenge implements Serializable{
 		}
 		return false;
 	}	
-*/
+
 }

@@ -9,25 +9,24 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import com.fr.uha.ensisa.java.restapi.model.ObstacleType;
 
-//@Entity
+@Entity
 public class Obstacle implements Serializable {
-/*	
+	
 	private static final long serialVersionUID = 1L;
 	
 	@Id
 	@GeneratedValue (strategy = GenerationType.AUTO)
 	@Column(name = "obstacleID", unique = true)
 	private int obstacleID;
+	
+	@Column(name ="distance", nullable = false)
+	private int distance;
+	
 	@Column(name ="type", nullable = false)
 	private ObstacleType type;
 	@Column(name ="description", nullable = false)
 	private String description;
 	
-	public Obstacle(int obstacleID, ObstacleType type, String description) {
-		this.obstacleID = obstacleID;
-		this.type = type;
-		this.description = description;
-	}
 	
 	public Obstacle() {
 		
@@ -56,5 +55,5 @@ public class Obstacle implements Serializable {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-*/
+
 }

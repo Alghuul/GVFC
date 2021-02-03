@@ -8,7 +8,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.persistence.UniqueConstraint;
 
 @Entity
 @Table(name = "user")
@@ -18,7 +17,7 @@ private static final long serialVersionUID = -1798070786993154676L;
 	
 	@Id
 	@Column(name = "user_id" , unique =  true)
-	//@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int user_id;
 	
 	@Column(name = "email", unique = true, nullable = false)
@@ -32,7 +31,6 @@ private static final long serialVersionUID = -1798070786993154676L;
 	
 	@Column(name = "firstname", nullable = false)
 	private String firstname;
-	
 	
 	public User(String email, String password, String lastname, String firstname) {
 

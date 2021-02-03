@@ -21,6 +21,14 @@ public class UserManager {
 		return u;
 	}
 
+	public static User getUserById(int id) {
+		if (id <0 )
+			return null;
+
+		User u = daoUser.findByid(id);
+		return u;
+	}
+	
 	public static User login(String login, String password) {
 		User u = daoUser.findByid(login);
 		if (u != null && u.getPassword().equals(password))
@@ -44,7 +52,6 @@ public class UserManager {
 			return true;
 		}
 		return false;
-		
 	}
 
 }

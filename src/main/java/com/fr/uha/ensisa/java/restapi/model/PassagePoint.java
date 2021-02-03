@@ -24,19 +24,9 @@ public class PassagePoint implements Serializable{
 	@Id
 	@Column(name="passagepointID", unique = true)
 	private int passagepointID;
-	@Column(name = "challengeID", unique = true)
-	private int challengeID;
-	@Column(name = "level", nullable = false)
-	private int level;
+	
 	@Column(name = "description" , nullable = false)
 	private String description;
-	 
-	public PassagePoint( int challengeID, int level, String description) {
-		
-		this.challengeID = challengeID;
-		this.level = level;
-		this.description = description;
-	}
 	
 	public PassagePoint() {
 		
@@ -48,22 +38,6 @@ public class PassagePoint implements Serializable{
 
 	public void setPassagepointID(int passagepointID) {
 		this.passagepointID = passagepointID;
-	}
-
-	public int getChallengeID() {
-		return challengeID;
-	}
-
-	public void setChallengeID(int challengeID) {
-		this.challengeID = challengeID;
-	}
-
-	public int getLevel() {
-		return level;
-	}
-
-	public void setLevel(int level) {
-		this.level = level;
 	}
 
 	public String getDescription() {

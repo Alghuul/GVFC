@@ -1,26 +1,27 @@
 package com.fr.uha.ensisa.java.restapi.model;
 
 import java.io.Serializable;
-
+import javax.persistence.*;
 
 
 public class Realisation implements Serializable {
-
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = -2153603343570801445L;
-
-//	private static final long serialVersionUID = 1L;
 //
+//	/**
+//	 * 
+//	 */
+//	private static final long serialVersionUID = -2153603343570801445L;
+//	
 //	@Id
 //	@GeneratedValue (strategy = GenerationType.AUTO)
 //	@Column(name = "realisationID", unique = true)
 //	private int realisationID;
+//	
 //	@Column(name = "userID" , nullable = false)
 //	private int userID;
+//	
 //	@Column(name = "ChallengeID", nullable = false)
 //	private int challengeID;
+//	
 //	//@Column()
 //	private HashMap<Integer/*idSegement*/, String> segmentDateRealisation; // tempsDeRealisationParSegment ;
 //	@Column(name = "endTime", nullable =false)

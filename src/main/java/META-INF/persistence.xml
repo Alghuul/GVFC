@@ -11,16 +11,16 @@
 		<class>com.fr.uha.ensisa.java.restapi.model.User</class>
 
 		<class>com.fr.uha.ensisa.java.restapi.model.PassagePoint</class>
+		<class>com.fr.uha.ensisa.java.restapi.model.Suggestion</class>
 	
-		<!-- <class>com.fr.uha.ensisa.java.restapi.model.Challenge</class>
+		<class>com.fr.uha.ensisa.java.restapi.model.Challenge</class>
 		<class>com.fr.uha.ensisa.java.restapi.model.Obstacle</class>
 		<class>com.fr.uha.ensisa.java.restapi.model.Segment</class>
-		<class>com.fr.uha.ensisa.java.restapi.model.Suggestion</class> -->
 
 		<exclude-unlisted-classes>true</exclude-unlisted-classes>
 		<properties>
-			<property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
-            <property name="hibernate.hbm2ddl.auto" value="create" />
+			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect"/>
+            <property name="hibernate.hbm2ddl.auto" value="update" />
             <property name="hibernate.show_sql" value="true" />
             <property name="hibernate.transaction.jta.platform" value="org.hibernate.service.jta.platform.internal.SunOneJtaPlatform"/>
 		</properties>
