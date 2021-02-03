@@ -4,10 +4,13 @@ import java.util.List;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
+import javax.ws.rs.core.Response.Status;
 
 import com.fr.uha.ensisa.java.restapi.controllers.UserManager;
 import com.fr.uha.ensisa.java.restapi.dao.DAOUser;
 import com.fr.uha.ensisa.java.restapi.model.User;
+
 
 /**
  * Root resource (exposed at "myresource" path)
@@ -21,6 +24,14 @@ public class UserResource {
      *
      * @return String that will be returned as a text/plain response.
      */
+
+
+@Path("myresource")
+public class UserResource {
+
+    
+	@SuppressWarnings("unchecked")
+
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	 public List<User> getUsers() {
@@ -29,28 +40,26 @@ public class UserResource {
 	
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
-	@Produces(MediaType.APPLICATION_JSON)
+	  @Produces(MediaType.APPLICATION_JSON)
     public boolean addUser(User user) {
        return UserManager.createUser(user);
        
     }
     
     @DELETE
-    @Path("{id}")
-	@Produces(MediaType.APPLICATION_JSON)
-    public boolean deleteUser(@PathParam("id") String id)
+	  @Produces(MediaType.APPLICATION_JSON)
+    public void deleteUser(@QueryParam("id") String id)
     {
     	return UserManager.deleteUser(Integer.parseInt(id));
     }
     
     @PUT
-    @Path("{id}")
     @Consumes(MediaType.APPLICATION_JSON)
-    @Produces(MediaType.APPLICATION_JSON)
-    public void updateUser(@PathParam("id") String id, User user)
+    public void updateUser(User user)
     {
-    	
+    		UserManager.put(user);
     }
+    	
     
     
 }
