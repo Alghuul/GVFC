@@ -1,6 +1,6 @@
 # GVFC
  
- #REST API for a Geek Virtual Fitness Challenge
+#REST API for a Geek Virtual Fitness Challenge
 
 #Contributors
 
