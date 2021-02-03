@@ -8,7 +8,6 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 
 import com.fr.uha.ensisa.java.restapi.controllers.UserManager;
-import com.fr.uha.ensisa.java.restapi.dao.DAOUser;
 import com.fr.uha.ensisa.java.restapi.model.User;
 
 
@@ -23,15 +22,32 @@ public class UserResource {
 	        return UserManager.getUsers();
 	    }
 	
+	@POST
+	@Path("/signin")
+	@Consumes(MediaType.APPLICATION_JSON)
+	@Produces(MediaType.APPLICATION_JSON)
+	public Response signin(@QueryParam("login") String login, @QueryParam("password") String password)
+	{
+		User u = UserManager.login(login, password);
+		if (u != null)
+			return Response.status(Status.ACCEPTED).build();
+		return Response.status(Status.NOT_FOUND).build();
+	}
+	
+	
+	
     @POST
+    @Path("/signup")
     @Consumes(MediaType.APPLICATION_JSON)
-	  @Produces(MediaType.APPLICATION_JSON)
+	@Produces(MediaType.APPLICATION_JSON)
     public boolean addUser(User user) {
        return UserManager.createUser(user);
-       
     }
     
+    
+    
     @DELETE
+    @Path("/delete")
 	@Produces(MediaType.APPLICATION_JSON)
     public Response deleteUser(@QueryParam("id") String id)
     {
@@ -42,6 +58,7 @@ public class UserResource {
     }
     
     @PUT
+    @Path("/put")
     @Consumes(MediaType.APPLICATION_JSON)
     public void updateUser(User user)
     {

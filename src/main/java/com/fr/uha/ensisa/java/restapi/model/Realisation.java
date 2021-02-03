@@ -8,11 +8,10 @@ import javax.persistence.*;
 
 @Entity
 public class Realisation implements Serializable {
-
-
+/*
 	private static final long serialVersionUID = -2153603343570801445L;
 
-
+/*
 
 	@Id
 	@GeneratedValue (strategy = GenerationType.AUTO)
@@ -23,12 +22,12 @@ public class Realisation implements Serializable {
 	@Column(name = "ChallengeID", nullable = false)
 	private int challengeID;
 	//@Column()
-	private HashMap<Integer/*idSegement*/, String> segmentDateRealisation; // tempsDeRealisationParSegment ;
+	private HashMap<Integer/*idSegement*//*, String> segmentDateRealisation; // tempsDeRealisationParSegment ;
 	@Column(name = "endTime", nullable =false)
 	private String endTime;
 	@Column(name ="realisationObstacle", nullable = false)
-	private HashMap<Integer /*ObstacleID*/, Boolean /* verif realisation obstacle*/> realisationObstacle;
-	@Column(name = "endTime", nullable = false)
+	private HashMap<Integer /*ObstacleID*///, Boolean /* verif realisation obstacle*/> realisationObstacle;*/
+/*	@Column(name = "endTime", nullable = false)
 	private long km;
 	@Column(name = "mouvementMode", nullable = false)
 	private MovementMode movementMode;
@@ -144,5 +143,5 @@ public class Realisation implements Serializable {
 		return finalResult;
 	}
 
-
+*/
 }

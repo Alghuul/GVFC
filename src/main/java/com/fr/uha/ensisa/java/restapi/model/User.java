@@ -1,14 +1,10 @@
 package com.fr.uha.ensisa.java.restapi.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-import javax.persistence.UniqueConstraint;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "user")
@@ -21,6 +17,8 @@ private static final long serialVersionUID = -1798070786993154676L;
 	//@GeneratedValue(strategy = GenerationType.AUTO)
 	private int user_id;
 	
+	
+
 	@Column(name = "email", unique = true, nullable = false)
 	private String email;
 	
