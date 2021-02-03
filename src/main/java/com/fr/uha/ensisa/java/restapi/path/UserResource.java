@@ -7,41 +7,57 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 
-import com.fr.uha.ensisa.java.restapi.dao.ConnectUser;
+import com.fr.uha.ensisa.java.restapi.controllers.UserManager;
+import com.fr.uha.ensisa.java.restapi.dao.DAOUser;
 import com.fr.uha.ensisa.java.restapi.model.User;
 
+
+/**
+ * Root resource (exposed at "myresource" path)
+ */
+@Path("myresource")
+public class UserResource {
+
+    /**
+     * Method handling HTTP GET requests. The returned object will be sent
+     * to the client as "text/plain" media type.
+     *
+     * @return String that will be returned as a text/plain response.
+     */
 
 
 @Path("myresource")
 public class UserResource {
 
-	ConnectUser cu = new ConnectUser();
     
 	@SuppressWarnings("unchecked")
+
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	 public List<User> getUsers() {
-	        return cu.getAll();
+	        return UserManager.getUsers();
 	    }
 	
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
-    public void addUser(User user) {
-        cu.add(user);
+	  @Produces(MediaType.APPLICATION_JSON)
+    public boolean addUser(User user) {
+       return UserManager.createUser(user);
        
     }
     
     @DELETE
+	  @Produces(MediaType.APPLICATION_JSON)
     public void deleteUser(@QueryParam("id") String id)
     {
-    	cu.delete(Integer.parseInt(id));
+    	return UserManager.deleteUser(Integer.parseInt(id));
     }
     
     @PUT
     @Consumes(MediaType.APPLICATION_JSON)
     public void updateUser(User user)
     {
-    		cu.put(user);
+    		UserManager.put(user);
     }
     	
     
