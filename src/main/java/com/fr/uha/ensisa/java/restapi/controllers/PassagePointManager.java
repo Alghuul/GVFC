@@ -31,7 +31,7 @@ public class PassagePointManager {
 	
 	public static boolean deletePassagePoint(int ppID) {
 		PassagePoint pp = daoPassagePoint.findByid(ppID);
-		if (pp == null) {
+		if (pp != null) {
 			daoPassagePoint.delete(ppID);
 			return true;
 		}

@@ -30,7 +30,7 @@ public class ChallengeManager {
 	
 	public static boolean deleteChallenge(int ChallengeID) {
 		Challenge c = daoChallenge.findByid(ChallengeID);
-		if (c == null) {
+		if (c != null) {
 			daoChallenge.delete(ChallengeID);
 			return true;
 		}

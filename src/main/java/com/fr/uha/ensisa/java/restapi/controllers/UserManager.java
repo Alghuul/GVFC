@@ -39,12 +39,16 @@ public class UserManager {
 
 	public static boolean deleteUser(int userID) {
 		User u = daoUser.findByid(userID);
-		if (u == null) {
+		if (u != null) {
 			daoUser.delete(userID);
 			return true;
 		}
 		return false;
 		
+	}
+
+	public static void putUser(User user) {
+		daoUser.put(user);
 	}
 
 }

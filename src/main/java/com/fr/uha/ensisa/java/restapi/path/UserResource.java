@@ -12,24 +12,9 @@ import com.fr.uha.ensisa.java.restapi.dao.DAOUser;
 import com.fr.uha.ensisa.java.restapi.model.User;
 
 
-/**
- * Root resource (exposed at "myresource" path)
- */
 @Path("myresource")
 public class UserResource {
 
-    /**
-     * Method handling HTTP GET requests. The returned object will be sent
-     * to the client as "text/plain" media type.
-     *
-     * @return String that will be returned as a text/plain response.
-     */
-
-
-@Path("myresource")
-public class UserResource {
-
-    
 	@SuppressWarnings("unchecked")
 
 	@GET
@@ -47,19 +32,20 @@ public class UserResource {
     }
     
     @DELETE
-	  @Produces(MediaType.APPLICATION_JSON)
-    public void deleteUser(@QueryParam("id") String id)
+	@Produces(MediaType.APPLICATION_JSON)
+    public Response deleteUser(@QueryParam("id") String id)
     {
-    	return UserManager.deleteUser(Integer.parseInt(id));
+    	if(UserManager.deleteUser(Integer.parseInt(id)))
+    		return Response.status(Status.CREATED).build();
+		return Response.status(Status.CONFLICT).build();
+
     }
     
     @PUT
     @Consumes(MediaType.APPLICATION_JSON)
     public void updateUser(User user)
     {
-    		UserManager.put(user);
+    		UserManager.putUser(user);
     }
-    	
-    
-    
+
 }

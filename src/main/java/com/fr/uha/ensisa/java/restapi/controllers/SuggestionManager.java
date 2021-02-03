@@ -30,7 +30,7 @@ public class SuggestionManager {
 	
 	public static boolean deleteSuggestion(int suggestionID) {
 		Suggestion s = daoSuggestion.findByid(suggestionID);
-		if (s == null) {
+		if (s != null) {
 			daoSuggestion.delete(suggestionID);
 			return true;
 		}

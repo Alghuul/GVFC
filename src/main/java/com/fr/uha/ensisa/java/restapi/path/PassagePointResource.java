@@ -10,7 +10,6 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 import com.fr.uha.ensisa.java.restapi.controllers.PassagePointManager;
-import com.fr.uha.ensisa.java.restapi.dao.DAOPassagePoint;
 
 import com.fr.uha.ensisa.java.restapi.model.PassagePoint;
 

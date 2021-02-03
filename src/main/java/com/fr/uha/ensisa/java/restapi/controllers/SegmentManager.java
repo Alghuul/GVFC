@@ -33,7 +33,7 @@ public class SegmentManager {
 
 	public static boolean deleteSegment(int SegmentID) {
 		Segment s = daoSegment.findByid(SegmentID);
-		if (s == null) {
+		if (s != null) {
 			daoSegment.delete(SegmentID);
 			return true;
 		}

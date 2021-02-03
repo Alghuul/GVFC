@@ -29,7 +29,7 @@ public class RealisationManager {
 	
 	public static boolean deleteRealisation(int RealisationID) {
 		Realisation r = daoRealisation.findByid(RealisationID);
-		if (r == null) {
+		if (r != null) {
 			daoRealisation.delete(RealisationID);
 			return true;
 		}
