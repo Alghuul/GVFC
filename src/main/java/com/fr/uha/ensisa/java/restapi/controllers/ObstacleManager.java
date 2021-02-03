@@ -20,17 +20,17 @@ public class ObstacleManager {
 	}
 	
 	public static boolean createObstacle(Obstacle obstacle) {
-		//Obstacle o = daoObstacle.findByid(s.getObstacleID());
-		//if (o == null) {
+		Obstacle o = daoObstacle.findByid(obstacle.getObstacleId());
+		if (o == null) {
 			daoObstacle.add(obstacle);
 			return true;
-		//}
-		//return false;
+		}
+		return false;
 	}
 	
 	public static boolean deleteObstacle(int obstacleID) {
 		Obstacle o = daoObstacle.findByid(obstacleID);
-		if (o == null) {
+		if (o != null) {
 			daoObstacle.delete(obstacleID);
 			return true;
 		}

@@ -22,6 +22,7 @@ public abstract class DAOAbstractFacade<T> {
 		
 		this.setClassEntities(entity);
 	}
+	
 	@SuppressWarnings("unchecked")
 	@Transactional
 	public List<T> getAll() {
@@ -64,7 +65,8 @@ public abstract class DAOAbstractFacade<T> {
 		}
 	}
 	
-	public  void putVol(T entity) {
+	@Transactional
+	public  void put(T entity) {
 		EntityManager em = ENTITY_MANAGER_FACTORY.createEntityManager();
 		EntityTransaction et = null;
 		try {
@@ -85,6 +87,7 @@ public abstract class DAOAbstractFacade<T> {
 	
 	}
 	
+	@Transactional
 	public  void delete(Object id ) {
 		EntityManager em = ENTITY_MANAGER_FACTORY.createEntityManager();
 		EntityTransaction et = null;
@@ -93,7 +96,6 @@ public abstract class DAOAbstractFacade<T> {
 			et.begin();
 			T entity = em.find(this.classEntities,id);
 			em.remove(entity);
-			em.persist(entity);
 			et.commit();
 		} catch (Exception e) {
 			if (et != null)
@@ -108,6 +110,7 @@ public abstract class DAOAbstractFacade<T> {
 	
 	}
 	
+	@Transactional
 	public T findByid( Object id)
 	{
 		EntityManager em = ENTITY_MANAGER_FACTORY.createEntityManager();

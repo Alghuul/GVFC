@@ -48,7 +48,6 @@ public class SuggestionManager {
 
 		if (s != null && u !=null) {
 			System.out.println("addvote");
-			s.addVoter(u);
 			return true;
 		}
 		return false;	

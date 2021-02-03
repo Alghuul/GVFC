@@ -19,7 +19,7 @@ public class RealisationManager {
 	}
 	
 	public static boolean createRealisation(Realisation realisation) {
-		//Realisation r = daoRealisation.findByid(s.getRealisationID());
+		//Realisation r = daoRealisation.findByid(realisation.getRealisationID());
 		//if (r == null) {
 			daoRealisation.add(realisation);
 			return true;
@@ -29,7 +29,7 @@ public class RealisationManager {
 	
 	public static boolean deleteRealisation(int RealisationID) {
 		Realisation r = daoRealisation.findByid(RealisationID);
-		if (r == null) {
+		if (r != null) {
 			daoRealisation.delete(RealisationID);
 			return true;
 		}

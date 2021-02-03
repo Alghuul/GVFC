@@ -1,9 +1,11 @@
 package com.fr.uha.ensisa.java.restapi.model;
 
 import java.io.Serializable;
+
 import javax.persistence.*;
 
 
+//@Entity
 public class Realisation implements Serializable {
 //
 //	/**
@@ -155,6 +157,4 @@ public class Realisation implements Serializable {
 //		}
 //		return finalResult;
 //	}
-
-
 }
