@@ -13,6 +13,7 @@
 		<class>com.fr.uha.ensisa.java.restapi.model.PassagePoint</class>
 
 		<!-- <class>com.fr.uha.ensisa.java.restapi.model.Challenge</class>
+				<class>com.fr.uha.ensisa.java.restapi.model.Realisation</class>
 		<class>com.fr.uha.ensisa.java.restapi.model.Obstacle</class>
 		<class>com.fr.uha.ensisa.java.restapi.model.Segment</class>
 		<class>com.fr.uha.ensisa.java.restapi.model.Suggestion</class> -->
