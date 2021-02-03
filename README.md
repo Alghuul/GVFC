@@ -4,6 +4,6 @@
 
 # Contributors
 
-## BEN SIDHOM Wissem
-## CHAIEB Adam 
-## IHSANE Mohamed Amine
+**BEN SIDHOM Wissem**
+**CHAIEB Adam**
+**IHSANE Mohamed Amine**
